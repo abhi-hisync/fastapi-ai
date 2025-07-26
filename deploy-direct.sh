@@ -55,6 +55,9 @@ fi
 echo "📦 Installing HISYNC AI dependencies to system Python..."
 echo "   This will install packages for user: $(whoami)"
 
+# Add local bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 # Upgrade pip first
 echo "🔧 Upgrading pip..."
 $PYTHON_CMD -m pip install --user --upgrade pip --break-system-packages --quiet
@@ -65,10 +68,34 @@ if [ -f "requirements.txt" ]; then
     echo "   Installing to: ~/.local/lib/python$($PYTHON_CMD -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')/site-packages/"
     echo "   Using --break-system-packages flag for Python 3.12+"
     
-    # Install with --user flag and --break-system-packages (no sudo needed)
-    $PYTHON_CMD -m pip install --user --break-system-packages -r requirements.txt --quiet
+    # Try main requirements first
+    echo "   Installing TensorFlow compatible with Python 3.12..."
+    if $PYTHON_CMD -m pip install --user --break-system-packages -r requirements.txt --quiet --upgrade; then
+        echo "✅ Dependencies installed successfully from requirements.txt"
+    else
+        echo "⚠️  Main requirements failed, trying minimal requirements..."
+        if [ -f "requirements-minimal.txt" ]; then
+            if $PYTHON_CMD -m pip install --user --break-system-packages -r requirements-minimal.txt --quiet --upgrade; then
+                echo "✅ Dependencies installed successfully from requirements-minimal.txt"
+            else
+                echo "❌ Both requirements files failed, installing core packages individually..."
+                CORE_PACKAGES=("fastapi" "uvicorn" "tensorflow" "pillow" "numpy" "opencv-python" "aiofiles")
+                for pkg in "${CORE_PACKAGES[@]}"; do
+                    echo "   Installing $pkg..."
+                    $PYTHON_CMD -m pip install --user --break-system-packages "$pkg" --quiet --upgrade || echo "   ⚠️  $pkg installation failed"
+                done
+            fi
+        else
+            echo "❌ requirements-minimal.txt not found, installing core packages..."
+            CORE_PACKAGES=("fastapi" "uvicorn" "tensorflow" "pillow" "numpy" "opencv-python" "aiofiles")
+            for pkg in "${CORE_PACKAGES[@]}"; do
+                echo "   Installing $pkg..."
+                $PYTHON_CMD -m pip install --user --break-system-packages "$pkg" --quiet --upgrade || echo "   ⚠️  $pkg installation failed"
+            done
+        fi
+    fi
     
-    echo "✅ Dependencies installed successfully to user directory"
+    echo "✅ Dependencies installation process completed"
 else
     echo "❌ requirements.txt not found!"
     exit 1

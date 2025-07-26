@@ -1,0 +1,18 @@
+# HISYNC AI - Minimal Requirements (Python 3.12 Compatible)
+# Core FastAPI Dependencies
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+aiofiles
+
+# ML Dependencies (Latest Compatible Versions)
+tensorflow
+pillow
+numpy
+opencv-python
+scikit-learn
+matplotlib
+
+# Additional utilities
+python-magic 
