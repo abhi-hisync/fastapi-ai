@@ -1,17 +1,17 @@
 # 🔥 HISYNC AI - Image Classification API
 
-**Enterprise-grade AI Image Classification API** by **HISYNC Technologies** - Built with FastAPI and TensorFlow for advanced audit automation and business intelligence.
+**Enterprise-grade AI Image Classification API** by **Hire Synchronisation Pvt. Ltd.** - Built with FastAPI and TensorFlow for advanced audit automation and business intelligence.
 
 ---
 
-**© 2024 HISYNC Technologies. All rights reserved.**  
+**© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.**  
 **Contact**: support@hisync.in | **Website**: https://hisync.in
 
 ---
 
-## 🏢 About HISYNC Technologies
+## 🏢 About Hire Synchronisation Pvt. Ltd.
 
-**HISYNC** is a leading technology company specializing in AI-powered automation solutions for enterprises. Our mission is to **synchronize business processes with cutting-edge AI innovation**.
+**HISYNC** (Brand of Hire Synchronisation Pvt. Ltd.) is a leading technology company specializing in AI-powered automation solutions for enterprises. Our mission is to **synchronize business processes with cutting-edge AI innovation**.
 
 ### 🚀 Our Products:
 - **HISYNC AI** - Advanced Image Classification Engine
@@ -110,7 +110,7 @@ Upload image and get intelligent verification against expected labels.
 
 ### 🏢 Company Information
 - **GET** `/` - Welcome to HISYNC AI
-- **GET** `/company` - About HISYNC Technologies
+- **GET** `/company` - About Hire Synchronisation Pvt. Ltd.
 - **GET** `/health` - System health monitoring
 - **GET** `/labels` - Supported AI categories
 - **GET** `/stats` - HISYNC AI performance metrics
@@ -287,7 +287,7 @@ Add HISYNC configuration:
 ```bash
 # HISYNC AI Configuration
 APP_NAME="HISYNC AI - Image Classification API"
-COMPANY="HISYNC Technologies"
+COMPANY="Hire Synchronisation Pvt. Ltd."
 DEBUG=False
 HOST=0.0.0.0
 PORT=8000
@@ -473,4 +473,4 @@ Your enterprise-grade AI image classification system is now deployed and ready!
 
 **🔥 HISYNC AI - Synchronizing Business with AI Innovation**
 
-**© 2024 HISYNC Technologies. All rights reserved.** 
+**© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.** 

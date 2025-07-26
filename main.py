@@ -46,10 +46,10 @@ app = FastAPI(
     description="""
     **HISYNC AI - Enterprise Image Classification API** for audit automation and physical verification.
     
-    Powered by **HISYNC Technologies** - Your trusted partner in AI-driven business solutions.
+    Powered by **Hire Synchronisation Pvt. Ltd.** - Your trusted partner in AI-driven business solutions.
     
     ## 🏢 About HISYNC
-    HISYNC is a leading technology company specializing in AI-powered automation solutions for enterprises.
+    Hire Synchronisation Pvt. Ltd. is a leading technology company specializing in AI-powered automation solutions for enterprises.
     Our cutting-edge image classification technology helps businesses streamline their audit processes,
     improve accuracy, and reduce manual verification time.
     
@@ -75,15 +75,15 @@ app = FastAPI(
     ✅ **24/7 Support** - Dedicated technical support team  
     
     ---
-    **© 2024 HISYNC Technologies. All rights reserved.**  
+    **© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.**  
     **Contact**: support@hisync.in | **Website**: https://hisync.in
     """,
-    version="2.0.0",
+    version="1.0.0",
     lifespan=lifespan,
     docs_url="/docs",
     redoc_url="/redoc",
     contact={
-        "name": "HISYNC Technologies",
+        "name": "Hire Synchronisation Pvt. Ltd.",
         "url": "https://hisync.in",
         "email": "support@hisync.in"
     },
@@ -397,7 +397,7 @@ async def get_api_stats():
         "dataset": "ImageNet + HISYNC Custom Training",
         "supported_formats": classification_service.supported_formats,
         "max_file_size_mb": classification_service.max_file_size / (1024 * 1024),
-        "api_version": "2.0.0",
+        "api_version": "1.0.0",
         "performance": {
             "avg_processing_time": "< 50ms",
             "accuracy": "Enterprise Grade",
@@ -414,14 +414,15 @@ async def get_api_stats():
 @app.get("/company", tags=["🏢 HISYNC General"])
 async def get_company_info():
     """
-    🏢 **About HISYNC Technologies**
+    🏢 **About Hire Synchronisation Pvt. Ltd.**
     
     Learn more about our company and AI solutions.
     """
     return {
-        "company_name": "HISYNC Technologies",
+        "company_name": "Hire Synchronisation Pvt. Ltd.",
+        "brand_name": "HISYNC",
         "tagline": "Synchronizing Business with AI Innovation",
-        "founded": "2024",
+        "founded": "2025",
         "specialization": "AI-Powered Business Automation Solutions",
         "products": [
             "HISYNC AI - Image Classification",

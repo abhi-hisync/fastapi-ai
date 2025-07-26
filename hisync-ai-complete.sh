@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 🔥 HISYNC AI - Complete All-in-One Deployment Script
-# © 2024 HISYNC Technologies. All rights reserved.
+# © 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.
 # 
 # This script does EVERYTHING needed to deploy HISYNC AI
 # No other scripts needed - just run this one!
@@ -10,7 +10,7 @@ set -e  # Exit on any error
 
 echo "🔥 HISYNC AI - Complete Deployment"
 echo "=================================="
-echo "© 2024 HISYNC Technologies"
+echo "© 2025 Hire Synchronisation Pvt. Ltd."
 echo "One script to rule them all!"
 echo ""
 
@@ -107,7 +107,7 @@ echo "⚙️  Step 3: Creating environment configuration..."
 cat > .env << EOF
 # HISYNC AI Configuration
 APP_NAME="HISYNC AI - Image Classification API"
-COMPANY="HISYNC Technologies"
+COMPANY="Hire Synchronisation Pvt. Ltd."
 DEBUG=False
 HOST=0.0.0.0
 PORT=8000
@@ -340,4 +340,4 @@ echo "   • Email: support@hisync.in"
 echo "   • Website: https://hisync.in"
 echo ""
 echo "🔥 HISYNC AI is ready for production!"
-echo "© 2024 HISYNC Technologies. All rights reserved." 
+echo "© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved." 
