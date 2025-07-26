@@ -10,7 +10,7 @@ aiofiles
 tensorflow
 pillow
 numpy
-opencv-python
+opencv-python-headless
 scikit-learn
 matplotlib
 

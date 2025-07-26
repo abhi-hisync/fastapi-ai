@@ -79,7 +79,7 @@ if [ -f "requirements.txt" ]; then
                 echo "✅ Dependencies installed successfully from requirements-minimal.txt"
             else
                 echo "❌ Both requirements files failed, installing core packages individually..."
-                CORE_PACKAGES=("fastapi" "uvicorn" "tensorflow" "pillow" "numpy" "opencv-python" "aiofiles")
+                CORE_PACKAGES=("fastapi" "uvicorn" "tensorflow" "pillow" "numpy" "opencv-python-headless" "aiofiles")
                 for pkg in "${CORE_PACKAGES[@]}"; do
                     echo "   Installing $pkg..."
                     $PYTHON_CMD -m pip install --user --break-system-packages "$pkg" --quiet --upgrade || echo "   ⚠️  $pkg installation failed"
@@ -87,7 +87,7 @@ if [ -f "requirements.txt" ]; then
             fi
         else
             echo "❌ requirements-minimal.txt not found, installing core packages..."
-            CORE_PACKAGES=("fastapi" "uvicorn" "tensorflow" "pillow" "numpy" "opencv-python" "aiofiles")
+            CORE_PACKAGES=("fastapi" "uvicorn" "tensorflow" "pillow" "numpy" "opencv-python-headless" "aiofiles")
             for pkg in "${CORE_PACKAGES[@]}"; do
                 echo "   Installing $pkg..."
                 $PYTHON_CMD -m pip install --user --break-system-packages "$pkg" --quiet --upgrade || echo "   ⚠️  $pkg installation failed"
