@@ -57,15 +57,16 @@ echo "   This will install packages for user: $(whoami)"
 
 # Upgrade pip first
 echo "🔧 Upgrading pip..."
-$PYTHON_CMD -m pip install --user --upgrade pip --quiet
+$PYTHON_CMD -m pip install --user --upgrade pip --break-system-packages --quiet
 
 # Install requirements directly
 if [ -f "requirements.txt" ]; then
     echo "📦 Installing from requirements.txt..."
     echo "   Installing to: ~/.local/lib/python$($PYTHON_CMD -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')/site-packages/"
+    echo "   Using --break-system-packages flag for Python 3.12+"
     
-    # Install with --user flag (no sudo needed)
-    $PYTHON_CMD -m pip install --user -r requirements.txt --quiet
+    # Install with --user flag and --break-system-packages (no sudo needed)
+    $PYTHON_CMD -m pip install --user --break-system-packages -r requirements.txt --quiet
     
     echo "✅ Dependencies installed successfully to user directory"
 else
@@ -81,7 +82,7 @@ for package in "${REQUIRED_PACKAGES[@]}"; do
         echo "   ✅ $package installed"
     else
         echo "   ❌ $package missing - installing individually..."
-        $PYTHON_CMD -m pip install --user $package --quiet
+        $PYTHON_CMD -m pip install --user --break-system-packages $package --quiet
     fi
 done
 
@@ -245,7 +246,7 @@ else
             echo "   ✅ $pkg"
         else
             echo "   ❌ $pkg - installing..."
-            $PYTHON_CMD -m pip install --user $pkg --quiet
+            $PYTHON_CMD -m pip install --user --break-system-packages $pkg --quiet
         fi
     done
 fi
