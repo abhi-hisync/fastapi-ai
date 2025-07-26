@@ -52,32 +52,80 @@ fi
 
 # Check if virtual environment module is available
 echo "🐍 Checking Python virtual environment support..."
+VENV_CMD="venv"
+
 if $PYTHON_CMD -m venv --help >/dev/null 2>&1; then
     echo "✅ Python venv module available"
+    VENV_CMD="venv"
 elif $PYTHON_CMD -m virtualenv --help >/dev/null 2>&1; then
     echo "✅ Python virtualenv module available"
     VENV_CMD="virtualenv"
 else
     echo "⚠️  Virtual environment not available, installing locally..."
-    $PYTHON_CMD -m pip install --user virtualenv
-    VENV_CMD="virtualenv"
+    echo "📦 Installing virtualenv package..."
+    
+    # Try to install virtualenv
+    if $PYTHON_CMD -m pip install --user virtualenv --quiet; then
+        echo "✅ virtualenv installed successfully"
+        VENV_CMD="virtualenv"
+    else
+        echo "❌ Failed to install virtualenv"
+        echo "🔍 Checking system packages..."
+        
+        # Check if python3-venv is available (Ubuntu/Debian)
+        if command -v apt-get >/dev/null 2>&1; then
+            echo "💡 Try: apt-get install python3-venv (ask your hosting provider)"
+        fi
+        
+        echo "❌ Cannot proceed without virtual environment support"
+        exit 1
+    fi
 fi
 
+echo "🔧 Using virtual environment method: $VENV_CMD"
+
 # Create virtual environment if it doesn't exist
-if [ ! -d "venv" ]; then
+if [ ! -d "venv" ] || [ ! -f "venv/bin/activate" ]; then
     echo "🐍 Creating Python virtual environment..."
+    # Remove any incomplete venv directory
+    rm -rf venv 2>/dev/null || true
+    
     if [ "$VENV_CMD" = "virtualenv" ]; then
         $PYTHON_CMD -m virtualenv venv
     else
         $PYTHON_CMD -m venv venv
     fi
-    echo "✅ Virtual environment created"
+    
+    # Verify virtual environment was created properly
+    if [ ! -f "venv/bin/activate" ]; then
+        echo "❌ Failed to create virtual environment with $PYTHON_CMD"
+        echo "🔄 Trying alternative method..."
+        
+        # Try with --user virtualenv
+        $PYTHON_CMD -m pip install --user virtualenv --quiet
+        $PYTHON_CMD -m virtualenv venv
+        
+        if [ ! -f "venv/bin/activate" ]; then
+            echo "❌ Virtual environment creation failed!"
+            echo "📋 Available Python versions:"
+            ls /usr/bin/python* 2>/dev/null || echo "No Python found in /usr/bin/"
+            exit 1
+        fi
+    fi
+    echo "✅ Virtual environment created successfully"
 else
     echo "✅ Virtual environment already exists"
 fi
 
 # Activate virtual environment and install dependencies
 echo "📦 Installing HISYNC AI dependencies..."
+if [ ! -f "venv/bin/activate" ]; then
+    echo "❌ Virtual environment activation file not found!"
+    echo "🔍 Checking venv directory structure..."
+    ls -la venv/ 2>/dev/null || echo "venv directory not found"
+    exit 1
+fi
+
 source venv/bin/activate
 
 # Upgrade pip
