@@ -2,12 +2,29 @@
 
 **Enterprise-grade AI Image Classification API** by **Hire Synchronisation Pvt. Ltd.** - Built with FastAPI and TensorFlow for advanced audit automation and business intelligence.
 
+## 👨‍💻 Developer Information
+
+**Developed by**: **Abhishek Rajput**  
+**GitHub Profile**: [@abhi-hisync](https://github.com/abhi-hisync)  
+**Project Repository**: [fastapi-ai](https://github.com/abhi-hisync/fastapi-ai)  
+**Software Engineer** specializing in AI and Python development
+
 ---
 
 **© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.**  
-**Contact**: support@hisync.in | **Website**: https://hisync.in
+**Developer**: Abhishek Rajput ([@abhi-hisync](https://github.com/abhi-hisync))  
+**Contact**: support@hisync.in | **Website**: https://hisync.in  
+**Source Code**: https://github.com/abhi-hisync/fastapi-ai
 
 ---
+
+## ⭐ Star this Repository
+
+If you find this project helpful, please give it a star on GitHub! ⭐
+
+[![GitHub stars](https://img.shields.io/github/stars/abhi-hisync/fastapi-ai?style=social)](https://github.com/abhi-hisync/fastapi-ai/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/abhi-hisync/fastapi-ai?style=social)](https://github.com/abhi-hisync/fastapi-ai/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/abhi-hisync/fastapi-ai)](https://github.com/abhi-hisync/fastapi-ai/issues)
 
 ## 🏢 About Hire Synchronisation Pvt. Ltd.
 
@@ -27,7 +44,21 @@ This API solves your exact business requirements:
 - **Advanced confidence scoring** for reliable business decisions
 - **Perfect for enterprise audit automation** and quality control
 
-### Example Usage:
+## 🚀 Quick Start
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/abhi-hisync/fastapi-ai.git
+cd fastapi-ai
+```
+
+### 2. Deploy with One Command
+```bash
+chmod +x hisync-ai-complete.sh
+./hisync-ai-complete.sh
+```
+
+### 3. Test API
 ```bash
 # Upload product image with expected label
 curl -X POST "https://ai.hisync.in/classify" \
@@ -471,6 +502,31 @@ Your enterprise-grade AI image classification system is now deployed and ready!
 
 ---
 
+## 🤝 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request.
+
+### How to Contribute:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is proprietary software owned by Hire Synchronisation Pvt. Ltd.
+
+## 🙏 Acknowledgments
+
+- Built with [FastAPI](https://fastapi.tiangolo.com/)
+- Powered by [TensorFlow](https://tensorflow.org/)
+- Uses [MobileNetV2](https://keras.io/api/applications/mobilenet/) for image classification
+
+---
+
 **🔥 HISYNC AI - Synchronizing Business with AI Innovation**
 
-**© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.** 
+**© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.**  
+**Developed by**: Abhishek Rajput ([@abhi-hisync](https://github.com/abhi-hisync))  
+**Repository**: https://github.com/abhi-hisync/fastapi-ai 

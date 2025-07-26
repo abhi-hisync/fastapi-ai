@@ -2,6 +2,8 @@
 
 # 🔥 HISYNC AI - Complete All-in-One Deployment Script
 # © 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.
+# Developed by: Abhishek Rajput (@abhi-hisync)
+# Repository: https://github.com/abhi-hisync/fastapi-ai
 # 
 # This script does EVERYTHING needed to deploy HISYNC AI
 # No other scripts needed - just run this one!
@@ -338,6 +340,9 @@ echo ""
 echo "📞 Support:"
 echo "   • Email: support@hisync.in"
 echo "   • Website: https://hisync.in"
+echo "   • Developer: Abhishek Rajput (@abhi-hisync)"
+echo "   • Repository: https://github.com/abhi-hisync/fastapi-ai"
 echo ""
 echo "🔥 HISYNC AI is ready for production!"
-echo "© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved." 
+echo "© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved."
+echo "Developed by: Abhishek Rajput (@abhi-hisync)" 

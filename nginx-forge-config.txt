@@ -1,5 +1,7 @@
 # HISYNC AI - Laravel Forge Nginx Configuration
 # © 2025 Hire Synchronisation Pvt. Ltd.
+# Developed by: Abhishek Rajput (@abhi-hisync)
+# Repository: https://github.com/abhi-hisync/fastapi-ai
 # Replace your current nginx config with this
 
 # FORGE CONFIG (DO NOT REMOVE!)

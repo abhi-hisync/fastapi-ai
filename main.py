@@ -48,6 +48,11 @@ app = FastAPI(
     
     Powered by **Hire Synchronisation Pvt. Ltd.** - Your trusted partner in AI-driven business solutions.
     
+    ## 👨‍💻 Developer
+    **Developed by**: Abhishek Rajput  
+    **GitHub**: [@abhi-hisync](https://github.com/abhi-hisync)  
+    **Project Repository**: [fastapi-ai](https://github.com/abhi-hisync/fastapi-ai)
+    
     ## 🏢 About HISYNC
     Hire Synchronisation Pvt. Ltd. is a leading technology company specializing in AI-powered automation solutions for enterprises.
     Our cutting-edge image classification technology helps businesses streamline their audit processes,
@@ -76,7 +81,9 @@ app = FastAPI(
     
     ---
     **© 2025 Hire Synchronisation Pvt. Ltd. All rights reserved.**  
-    **Contact**: support@hisync.in | **Website**: https://hisync.in
+    **Developer**: Abhishek Rajput ([@abhi-hisync](https://github.com/abhi-hisync))  
+    **Contact**: support@hisync.in | **Website**: https://hisync.in  
+    **Source Code**: https://github.com/abhi-hisync/fastapi-ai
     """,
     version="1.0.0",
     lifespan=lifespan,
@@ -441,7 +448,12 @@ async def get_company_info():
             "twitter": "https://twitter.com/hisync_ai"
         },
         "headquarters": "India",
-        "mission": "To revolutionize business processes through cutting-edge AI technology and automation solutions."
+        "mission": "To revolutionize business processes through cutting-edge AI technology and automation solutions.",
+        "developer": {
+            "name": "Abhishek Rajput",
+            "github": "https://github.com/abhi-hisync",
+            "repository": "https://github.com/abhi-hisync/fastapi-ai"
+        }
     }
 
 if __name__ == "__main__":
