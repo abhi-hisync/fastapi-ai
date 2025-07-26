@@ -1,0 +1,36 @@
+# 🚀 HISYNC AI - Server Update Commands
+# Copy-paste these commands on your server
+
+# Step 1: SSH to your server
+ssh forge@your-server-ip
+
+# Step 2: Go to project directory
+cd ~/ai.hisync.in
+
+# Step 3: Pull latest changes
+git pull origin main
+
+# Step 4: Stop old process
+pkill -f "python.*main.py"
+
+# Step 5: Start new process
+nohup python3.12 main.py > hisync-ai.log 2>&1 &
+
+# Step 6: Check if working
+sleep 10
+curl http://localhost:8000/health
+curl http://localhost:8000/company
+
+# Step 7: Test domain
+curl https://ai.hisync.in/company
+
+# Alternative: Use the update script
+chmod +x update-server.sh
+./update-server.sh
+
+# After running these commands, refresh your browser!
+# You should see:
+# - Company: "Hire Synchronisation Pvt. Ltd."
+# - Developer: "Abhishek Rajput"
+# - Version: "1.0.0"
+# - Year: "2025" 
