@@ -129,9 +129,9 @@ async def read_root():
     """Welcome endpoint with HISYNC AI information"""
     return {
         "message": "🔥 Welcome to HISYNC AI - Image Classification API!",
-        "company": "HISYNC Technologies",
+        "company": "Hire Synchronisation Pvt. Ltd.",
         "status": "running",
-        "version": "2.0.0",
+        "version": "1.0.0",
         "description": "Enterprise-grade AI image classification for audit automation",
         "powered_by": "HISYNC AI Engine",
         "contact": {
@@ -154,7 +154,7 @@ async def health_check():
     return HealthResponse(
         status="healthy" if classification_service.is_loaded else "unhealthy",
         model_loaded=classification_service.is_loaded,
-        version="2.0.0",
+        version="1.0.0",
         supported_formats=classification_service.supported_formats
     )
 
