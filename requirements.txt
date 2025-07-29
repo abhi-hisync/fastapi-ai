@@ -5,13 +5,15 @@ pydantic==2.5.0
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-dotenv==1.0.0
-# ML Dependencies for Image Classification (Python 3.12 Compatible)
+# ML Dependencies for Google ResNet v2 (Latest & Best Performance)
 tensorflow>=2.16.1
+tensorflow-hub>=0.16.1
 pillow>=10.1.0
 numpy>=1.24.3
 opencv-python-headless>=4.8.1.78
 scikit-learn>=1.3.2
 matplotlib>=3.8.2
+requests>=2.31.0
 # Additional utilities
 aiofiles==23.2.1
 python-magic==0.4.27 
