@@ -40,6 +40,8 @@ class HealthResponse(BaseModelConfig):
     ai_model_loaded: bool = Field(..., description="Whether HISYNC AI model is loaded and ready", alias="model_loaded")
     version: str = Field(..., description="HISYNC AI API version")
     supported_formats: List[str] = Field(..., description="Image formats supported by HISYNC AI")
+    resnet_available: Optional[bool] = Field(default=False, description="Whether Google ResNet v2 model is available")
+    yolo12_available: Optional[bool] = Field(default=False, description="Whether YOLO12 model is available")
     
     class Config:
         populate_by_name = True  # Allow both field name and alias 
