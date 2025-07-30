@@ -52,7 +52,7 @@ class YOLO12ClassificationService:
             'yolo12l': 'large - high accuracy',
             'yolo12x': 'extra large - highest accuracy'
         }
-        self.current_model = 'yolo12n'  # Default to nano for speed
+        self.current_model = 'yolo12x'  # Using extra large for highest accuracy
         self.supported_tasks = ['detect', 'segment', 'classify', 'pose', 'obb']
         self.current_task = 'detect'
         self.supported_formats = ['JPEG', 'PNG', 'JPG', 'WEBP', 'BMP', 'TIFF']
